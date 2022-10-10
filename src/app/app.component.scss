@@ -1,0 +1,61 @@
+@import "~src/styles";
+
+:host{
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-line{
+  height:100px;
+  width:5px;
+  @include background-gradient(0)
+}
+
+.box {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  color: #fff;
+  background: #151320;
+  font: 700 2rem 'Montserrat';
+  line-height: 400px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 3px;
+  overflow: visible;
+
+  &:after, &:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    top: -15px;
+    left: -15px;
+    border-radius: 8px;
+    @include background-gradient(45deg);
+    background-size: 400%;
+    background-repeat: no-repeat;
+  }
+
+  &:after {
+    filter: blur(50px);
+  }
+
+  .content{
+    background: #151320;
+  }
+}
+
+.back{
+  position: fixed;
+  background: #151320;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

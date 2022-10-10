@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin background-gradient($angle){
+  background: linear-gradient($angle,
+    #ffff00AA, #00ff00AA,
+    #0099ffAA, #001affAA,
+    #a200ffAA, #ff0055AA,
+    #ff0000AA, #ff0055AA,
+    #ff0000AA, #ffff00AA,
+    #00ff00AA, #0099ffAA,
+    #001affAA, #a200ffAA
+  );
+  animation: gradient 12s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: calc(100%);
+  }
+}
+
